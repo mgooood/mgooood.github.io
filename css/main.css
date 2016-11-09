@@ -78,10 +78,11 @@ a {
     background-color: rgba(74,74,74,0.6);
     margin-bottom: 20px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .work-items li img {
-    width: 100%;    
+    width: 100%;   
 }
 
 .page-footer {
@@ -101,11 +102,12 @@ a {
         width: 385px;
     }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 868px) {
     .nav-items,
     .footer-items {
-        display: flex;
-        justify-content: space-between;
+        width: 30%;
+        margin-right: auto;
+        margin-left: auto;
     }
     .page-main {
         display: flex;
