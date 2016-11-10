@@ -1,0 +1,24 @@
+{
+  "name": "mgooood",
+  "version": "1.0.0",
+  "description": "My portfolio page",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://mgooood@github.com/mgooood/mgooood.github.io.git"
+  },
+  "author": "mgooood",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mgooood/mgooood.github.io/issues"
+  },
+  "homepage": "https://github.com/mgooood/mgooood.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  }
+}
