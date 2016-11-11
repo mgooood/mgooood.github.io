@@ -125,6 +125,19 @@ a {
 
 /* Media Queries
 ********************************************************************************/
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (orientation: landscape) {
+    .page-header {
+        h1 {
+            margin: 5px;
+        }
+        h4 {
+            display: none;
+        }
+    }
+}
 
 @media screen and (min-width: 500px) {
     .work-items {
