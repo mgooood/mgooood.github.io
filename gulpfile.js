@@ -54,7 +54,7 @@ gulp.task('clearCache', function (done) {
 // clean root area of js, css, and html
 gulp.task('clean:build', function() {
     console.log("Cleaning build area");
-    return del.sync(['./js', './css', './index.html']);
+    return del.sync(['./js', './css', './index.html', './about.html']);
 });
 
 // run all
