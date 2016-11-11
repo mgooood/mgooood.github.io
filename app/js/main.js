@@ -1,6 +1,4 @@
-function thisTestFunction() {
-    var testString = "this is my main js";
-    console.log(testString);
-}
-
-thisTestFunction();
+$('li', '.nav-items').on('click', function() {
+    $(this).addClass('active');
+    $(this).siblings('li').removeClass('active');
+});
