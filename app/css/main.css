@@ -10,7 +10,9 @@ html, body {
   height: 100%; }
 
 body {
-  color: #fff; }
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200; }
 
 /* Global 
 ********************************************************************************/
@@ -52,6 +54,10 @@ a {
 .page-header {
   text-align: center;
   background-color: rgba(74, 74, 74, 0.6); }
+  .page-header h1 {
+    font-weight: 600; }
+  .page-header h4 {
+    font-weight: 200; }
 
 .work-items {
   margin: 0; }

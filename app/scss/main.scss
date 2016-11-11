@@ -13,7 +13,9 @@ html, body {
 
 body {
     color: #fff;
-}
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+}    
 
 /* Global 
 ********************************************************************************/
@@ -62,6 +64,13 @@ a {
 .page-header {
     text-align: center;
     background-color: rgba(74,74,74,0.6);
+    h1 {
+        font-weight: 600;
+    }
+    h4 {
+        font-weight: 200;
+    }
+
 }
 
 .work-items {
