@@ -6,7 +6,9 @@ var gulp = require('gulp'),
     gulpIf = require('gulp-if'),
     cssnano = require('gulp-cssnano'),
     imagemin = require('gulp-imagemin'),
-    cache = require('gulp-cache');
+    cache = require('gulp-cache'),
+    del = require('del'),
+    runSequence = require('run-sequence');
 
 gulp.task('sass', function() {
     return gulp.src('app/scss/**/*.scss')
@@ -14,7 +16,7 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('app/css'))
         .pipe(browserSync.reload({
             stream: true
-        }))
+        }));
 });
 
 gulp.task('watch', ['browserSync', 'sass'], function(){
@@ -28,7 +30,7 @@ gulp.task('browserSync', function() {
         server: {
             baseDir: 'app'
         }
-    })
+    });
 });
 
 gulp.task('useref', function() {
@@ -36,15 +38,32 @@ gulp.task('useref', function() {
         .pipe(useref())
         .pipe(gulpIf('*.js', uglify()))
         .pipe(gulpIf('*.css', cssnano()))
-        .pipe(gulp.dest('.'))
+        .pipe(gulp.dest('.'));
 });
 
 gulp.task('images', function() {
     return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
         .pipe(cache(imagemin()))
-        .pipe(gulp.dest('./images'))
+        .pipe(gulp.dest('./images'));
 });
 
 gulp.task('clearCache', function (done) {
   return cache.clearAll(done);
 });
+
+// clean root area of js, css, and html
+gulp.task('clean:build', function() {
+    console.log("Cleaning build area");
+    return del.sync(['./js', './css', './index.html']);
+});
+
+// run all
+gulp.task('build', ['sass', 'useref'], function() {
+    console.log("Building Project");
+});
+// default
+gulp.task('default', function (callback) {
+  runSequence(['sass','browserSync', 'watch'],
+    callback
+  )
+})
